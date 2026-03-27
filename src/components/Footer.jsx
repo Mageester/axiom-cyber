@@ -1,7 +1,9 @@
+import { Link } from 'react-router-dom';
+
 const FOOTER_LINKS = [
-  { label: 'Services', href: '#services' },
-  { label: 'Process', href: '#process' },
-  { label: 'Why Us', href: '#why' },
+  { label: 'Home', href: '/' },
+  { label: 'Services', href: '/services' },
+  { label: 'Approach', href: '/approach' },
 ];
 
 export default function Footer() {
@@ -11,8 +13,10 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           {/* Brand */}
           <div>
-            <div className="flex items-center mb-4 -ml-4">
-              <img src="/logo.png" alt="Axiom Cyber Logo" className="h-16 w-auto object-contain" />
+            <div className="flex items-center mb-6 -ml-4">
+              <Link to="/">
+                <img src="/logo.png" alt="Axiom Cyber Logo" className="h-[48px] w-auto object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.05)]" />
+              </Link>
             </div>
             <p className="text-xs text-zinc-500 max-w-xs leading-relaxed">
               A division of Axiom Infrastructure. Security assessment for organizations that operate at scale.
@@ -22,13 +26,13 @@ export default function Footer() {
           {/* Links */}
           <nav className="flex flex-wrap gap-6">
             {FOOTER_LINKS.map((link) => (
-              <a
+              <Link
                 key={link.href}
-                href={link.href}
+                to={link.href}
                 className="text-xs text-zinc-500 hover:text-zinc-300 transition-colors"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
             <a
               href="mailto:security@getaxiom.ca"

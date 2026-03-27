@@ -1,27 +1,33 @@
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import Hero from './sections/Hero';
-import Services from './sections/Services';
-import WhyAxiom from './sections/WhyAxiom';
-import RiskExposure from './sections/RiskExposure';
-import Process from './sections/Process';
-import Trust from './sections/Trust';
-import CTA from './sections/CTA';
+import { useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import RootLayout from './layouts/RootLayout';
+import Home from './pages/Home';
+import ServicesPage from './pages/ServicesPage';
+import Approach from './pages/Approach';
+import Contact from './pages/Contact';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-black">
-      <Navbar />
-      <main>
-        <Hero />
-        <Services />
-        <WhyAxiom />
-        <RiskExposure />
-        <Process />
-        <Trust />
-        <CTA />
-      </main>
-      <Footer />
-    </div>
+    <>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<RootLayout />}>
+          <Route index element={<Home />} />
+          <Route path="services" element={<ServicesPage />} />
+          <Route path="approach" element={<Approach />} />
+          <Route path="contact" element={<Contact />} />
+        </Route>
+      </Routes>
+    </>
   );
 }
