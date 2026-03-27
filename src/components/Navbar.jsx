@@ -27,8 +27,8 @@ export default function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-3 group" id="nav-logo">
-          <img src="/logo.png" alt="Axiom Cyber Logo" className="h-8 w-auto mix-blend-screen" />
+        <a href="#" className="flex items-center group pt-1" id="nav-logo">
+          <img src="/logo.png" alt="Axiom Cyber Logo" className="h-20 md:h-24 w-auto mix-blend-screen scale-[1.3] origin-left" />
         </a>
 
         {/* Desktop Nav */}

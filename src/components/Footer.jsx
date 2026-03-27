@@ -11,8 +11,8 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-3 mb-3">
-              <img src="/logo.png" alt="Axiom Cyber Logo" className="h-8 w-auto mix-blend-screen" />
+            <div className="flex items-center mb-1">
+              <img src="/logo.png" alt="Axiom Cyber Logo" className="h-20 w-auto mix-blend-screen scale-[1.3] origin-left" />
             </div>
             <p className="text-xs text-zinc-500 max-w-xs leading-relaxed">
               A division of Axiom Infrastructure. Security assessment for organizations that operate at scale.
