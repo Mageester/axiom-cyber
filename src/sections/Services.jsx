@@ -79,12 +79,12 @@ export default function Services() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-zinc-800">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {SERVICES.map((service) => (
             <div
               key={service.id}
               id={service.id}
-              className="group bg-zinc-950 p-8 hover:bg-zinc-900/60 transition-colors duration-200"
+              className="group relative overflow-hidden bg-zinc-900/40 backdrop-blur-sm border border-zinc-800/80 rounded-xl p-8 hover:bg-zinc-800/50 hover:border-zinc-700/80 hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-900/10 transition-all duration-500"
             >
               <div className="text-blue-400 mb-5">
                 {service.icon}

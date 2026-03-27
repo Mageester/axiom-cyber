@@ -33,10 +33,10 @@ export default function Hero() {
         </div>
 
         {/* Headline */}
-        <h1 className="animate-fade-up delay-100 text-4xl md:text-5xl lg:text-6xl font-semibold text-zinc-100 leading-[1.1] tracking-tight mb-6">
+        <h1 className="animate-fade-up delay-100 text-4xl md:text-5xl lg:text-7xl font-semibold text-zinc-100 leading-[1.05] tracking-tight mb-6">
           Security assessment for
           <br />
-          <span className="text-blue-400">infrastructure that matters.</span>
+          <span className="bg-gradient-to-br from-blue-400 via-blue-500 to-indigo-600 bg-clip-text text-transparent drop-shadow-sm">infrastructure that matters.</span>
         </h1>
 
         {/* Subtext */}

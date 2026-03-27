@@ -53,13 +53,13 @@ export default function WhyAxiom() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {DIFFERENTIATORS.map((item) => (
             <div key={item.id} id={item.id} className="group">
-              <div className="flex items-start gap-4">
-                <span className="font-mono text-xs text-zinc-700 pt-1 flex-shrink-0 w-6">{item.label}</span>
+              <div className="flex items-start gap-4 p-6 -m-6 rounded-2xl border border-transparent hover:bg-zinc-900/50 hover:border-zinc-800/50 hover:shadow-xl transition-all duration-500">
+                <span className="font-mono text-xs text-zinc-600 group-hover:text-blue-500 pt-1 flex-shrink-0 w-6 transition-colors duration-300">{item.label}</span>
                 <div>
-                  <h3 className="text-sm font-semibold text-zinc-200 mb-2 leading-snug">
+                  <h3 className="text-sm font-semibold text-zinc-300 mb-2 leading-snug group-hover:text-zinc-100 transition-colors duration-300">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-zinc-500 leading-relaxed">
+                  <p className="text-sm text-zinc-500 leading-relaxed group-hover:text-zinc-400 transition-colors duration-300">
                     {item.body}
                   </p>
                 </div>

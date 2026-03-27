@@ -46,9 +46,9 @@ export default function Trust() {
             How we work, and what you can expect.
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {PILLARS.map((pillar) => (
-              <div key={pillar.id} id={pillar.id} className="border-t border-zinc-800 pt-6">
+              <div key={pillar.id} id={pillar.id} className="bg-zinc-900/30 border border-zinc-800/60 rounded-xl p-8 hover:bg-zinc-900/60 hover:border-zinc-700 transition-all duration-300">
                 <h3 className="text-sm font-semibold text-zinc-200 mb-3">{pillar.title}</h3>
                 <p className="text-sm text-zinc-500 leading-relaxed">{pillar.body}</p>
               </div>

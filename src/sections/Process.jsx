@@ -49,11 +49,11 @@ export default function Process() {
 
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-10 lg:gap-6">
             {STEPS.map((step, i) => (
-              <div key={step.id} id={step.id} className="relative">
+              <div key={step.id} id={step.id} className="relative group">
                 {/* Step number with circle */}
                 <div className="flex items-center gap-4 mb-5">
-                  <div className="relative z-10 flex-shrink-0 w-14 h-14 rounded-sm bg-zinc-900 border border-zinc-800 flex items-center justify-center">
-                    <span className="font-mono text-sm font-semibold text-blue-400">{step.number}</span>
+                  <div className="relative z-10 flex-shrink-0 w-14 h-14 rounded-full bg-zinc-950 border border-zinc-800 group-hover:border-blue-500/50 group-hover:bg-blue-950/20 group-hover:shadow-[0_0_15px_rgba(59,130,246,0.15)] flex items-center justify-center transition-all duration-500">
+                    <span className="font-mono text-sm font-semibold text-blue-500 group-hover:text-blue-400 transition-colors">{step.number}</span>
                   </div>
                   {/* Mobile connecting line */}
                   {i < STEPS.length - 1 && (
@@ -61,11 +61,13 @@ export default function Process() {
                   )}
                 </div>
 
-                <h3 className="text-base font-semibold text-zinc-100 mb-2">{step.title}</h3>
-                <p className="text-sm text-zinc-500 leading-relaxed mb-4">{step.description}</p>
-                <span className="inline-block font-mono text-xs text-zinc-700 border border-zinc-800 px-2 py-1 rounded-sm">
-                  {step.detail}
-                </span>
+                <div className="p-6 -m-6 rounded-xl border border-transparent group-hover:bg-zinc-900/30 group-hover:border-zinc-800/50 transition-all duration-500">
+                  <h3 className="text-base font-semibold text-zinc-100 mb-2 group-hover:text-white transition-colors">{step.title}</h3>
+                  <p className="text-sm text-zinc-500 leading-relaxed mb-4 group-hover:text-zinc-400 transition-colors">{step.description}</p>
+                  <span className="inline-block font-mono text-xs text-zinc-600 border border-zinc-800 bg-zinc-900/50 px-2.5 py-1 rounded-sm group-hover:text-zinc-400 group-hover:border-zinc-700 transition-all">
+                    {step.detail}
+                  </span>
+                </div>
               </div>
             ))}
           </div>
