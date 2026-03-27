@@ -52,7 +52,7 @@ export default function Process() {
               <div key={step.id} id={step.id} className="relative group">
                 {/* Step number with circle */}
                 <div className="flex items-center gap-4 mb-5">
-                  <div className="relative z-10 flex-shrink-0 w-14 h-14 rounded-full bg-zinc-950 border border-zinc-800 group-hover:border-orange-500/50 group-hover:bg-orange-950/20 group-hover:shadow-[0_0_15px_rgba(59,130,246,0.15)] flex items-center justify-center transition-all duration-500">
+                  <div className="relative z-10 flex-shrink-0 w-14 h-14 rounded-full bg-black border border-zinc-800 group-hover:border-orange-500/50 group-hover:bg-orange-950/20 group-hover:shadow-[0_0_15px_rgba(59,130,246,0.15)] flex items-center justify-center transition-all duration-500">
                     <span className="font-mono text-sm font-semibold text-orange-500 group-hover:text-orange-400 transition-colors">{step.number}</span>
                   </div>
                   {/* Mobile connecting line */}

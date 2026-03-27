@@ -1,6 +1,6 @@
 export default function CTA() {
   return (
-    <section id="cta" className="py-24 lg:py-36 bg-zinc-950 relative overflow-hidden">
+    <section id="cta" className="py-24 lg:py-36 bg-black relative overflow-hidden">
       {/* Background glow */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="w-[500px] h-[300px] bg-orange-600/5 rounded-full blur-3xl" />
@@ -36,17 +36,17 @@ export default function CTA() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-[10px] font-semibold text-zinc-400 uppercase tracking-[0.15em] mb-2">Name</label>
-                <input type="text" name="name" required className="w-full bg-zinc-950/80 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-zinc-100 placeholder-zinc-600 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors" placeholder="John Doe" />
+                <input type="text" name="name" required className="w-full bg-black/80 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-zinc-100 placeholder-zinc-600 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors" placeholder="John Doe" />
               </div>
               <div>
                 <label className="block text-[10px] font-semibold text-zinc-400 uppercase tracking-[0.15em] mb-2">Email</label>
-                <input type="email" name="email" required className="w-full bg-zinc-950/80 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-zinc-100 placeholder-zinc-600 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors" placeholder="john@company.com" />
+                <input type="email" name="email" required className="w-full bg-black/80 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-zinc-100 placeholder-zinc-600 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors" placeholder="john@company.com" />
               </div>
             </div>
             
             <div>
               <label className="block text-[10px] font-semibold text-zinc-400 uppercase tracking-[0.15em] mb-2">Infrastructure Scope</label>
-              <textarea name="message" required rows="4" className="w-full bg-zinc-950/80 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-zinc-100 placeholder-zinc-600 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors resize-none" placeholder="Briefly describe what you're looking to assess (e.g., specific web apps, internal network, cloud footprint)..."></textarea>
+              <textarea name="message" required rows="4" className="w-full bg-black/80 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-zinc-100 placeholder-zinc-600 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors resize-none" placeholder="Briefly describe what you're looking to assess (e.g., specific web apps, internal network, cloud footprint)..."></textarea>
             </div>
             
             <button type="submit" className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-orange-600 text-white font-semibold hover:bg-orange-500 shadow-[0_0_20px_rgba(234,88,12,0.3)] hover:shadow-[0_0_30px_rgba(234,88,12,0.5)] transition-all duration-300">

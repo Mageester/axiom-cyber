@@ -70,7 +70,7 @@ const SERVICES = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 lg:py-32 bg-zinc-950">
+    <section id="services" className="py-24 lg:py-32 bg-black">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="mb-14">
           <SectionLabel>Core Services</SectionLabel>

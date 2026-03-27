@@ -20,7 +20,7 @@ const PILLARS = [
 
 export default function Trust() {
   return (
-    <section id="trust" className="py-24 lg:py-32 bg-zinc-950 border-t border-zinc-800/60">
+    <section id="trust" className="py-24 lg:py-32 bg-black border-t border-zinc-800/60">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Trust banner */}
         <div className="flex flex-col md:flex-row items-start md:items-center gap-6 pb-14 mb-14 border-b border-zinc-800/60">

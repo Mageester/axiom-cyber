@@ -9,7 +9,7 @@ const STATS = [
 
 export default function RiskExposure() {
   return (
-    <section id="risk" className="py-24 lg:py-32 bg-zinc-950 border-y border-zinc-800/60">
+    <section id="risk" className="py-24 lg:py-32 bg-black border-y border-zinc-800/60">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Left: Copy */}
@@ -36,7 +36,7 @@ export default function RiskExposure() {
           {/* Right: Stats */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-zinc-800">
             {STATS.map((stat) => (
-              <div key={stat.id} id={stat.id} className="bg-zinc-950 p-8">
+              <div key={stat.id} id={stat.id} className="bg-black p-8">
                 <div className="flex items-end gap-1 mb-3">
                   <span className="text-3xl font-semibold text-zinc-100 tabular-nums leading-none">
                     {stat.value}

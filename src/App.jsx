@@ -10,7 +10,7 @@ import CTA from './sections/CTA';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-zinc-950">
+    <div className="min-h-screen bg-black">
       <Navbar />
       <main>
         <Hero />

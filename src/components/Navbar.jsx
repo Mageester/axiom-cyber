@@ -19,16 +19,12 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800/60'
-          : 'bg-transparent'
-      }`}
+      className={`fixed w-full top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-black/95 backdrop-blur-md border-b border-zinc-900 shadow-md py-0' : 'bg-black/50 backdrop-blur-sm border-b border-transparent py-2'}`}
     >
-      <nav className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
+      <nav className="max-w-7xl mx-auto px-6 lg:px-8 h-20 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center group pt-1" id="nav-logo">
-          <img src="/logo.png" alt="Axiom Cyber Logo" className="h-20 md:h-24 w-auto mix-blend-screen scale-[1.3] origin-left" />
+        <a href="#" className="flex items-center group -ml-4" id="nav-logo">
+          <img src="/logo.png" alt="Axiom Cyber Logo" className="h-16 w-auto object-contain" />
         </a>
 
         {/* Desktop Nav */}
@@ -71,7 +67,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-zinc-950/95 backdrop-blur-md border-b border-zinc-800 px-6 pb-6 pt-2">
+        <div className="md:hidden bg-black/95 backdrop-blur-md border-b border-zinc-800 px-6 pb-6 pt-2">
           <ul className="flex flex-col gap-4">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>

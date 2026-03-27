@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-zinc-950"
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-black"
     >
       {/* Grid background */}
       <div className="absolute inset-0 line-grid opacity-60 pointer-events-none" />

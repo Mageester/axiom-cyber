@@ -6,13 +6,13 @@ const FOOTER_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-zinc-800 bg-zinc-950">
+    <footer className="border-t border-zinc-800 bg-black">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           {/* Brand */}
           <div>
-            <div className="flex items-center mb-1">
-              <img src="/logo.png" alt="Axiom Cyber Logo" className="h-20 w-auto mix-blend-screen scale-[1.3] origin-left" />
+            <div className="flex items-center mb-4 -ml-4">
+              <img src="/logo.png" alt="Axiom Cyber Logo" className="h-16 w-auto object-contain" />
             </div>
             <p className="text-xs text-zinc-500 max-w-xs leading-relaxed">
               A division of Axiom Infrastructure. Security assessment for organizations that operate at scale.
