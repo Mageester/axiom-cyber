@@ -15,7 +15,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center mb-6 -ml-4">
               <Link to="/">
-                <img src="/logo.png" alt="Axiom Cyber Logo" className="h-[48px] w-auto object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.05)]" />
+                <img src="/logo.png" alt="Axiom Cyber Logo" className="h-[75px] w-auto object-contain drop-shadow-[0_0_20px_rgba(255,255,255,0.1)]" />
               </Link>
             </div>
             <p className="text-xs text-zinc-500 max-w-xs leading-relaxed">

@@ -26,7 +26,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link to="/" className="flex items-center -ml-4" id="nav-logo">
           {/* New transparent logo styling */}
-          <img src="/logo.png" alt="Axiom Cyber" className="h-[52px] w-auto object-contain cursor-pointer drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]" />
+          <img src="/logo.png" alt="Axiom Cyber" className="h-[85px] w-auto object-contain cursor-pointer drop-shadow-[0_0_25px_rgba(255,255,255,0.15)]" />
         </Link>
 
         {/* Desktop Nav */}
