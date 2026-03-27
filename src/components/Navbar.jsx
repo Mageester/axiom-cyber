@@ -50,7 +50,7 @@ export default function Navbar() {
           <a
             href="#cta"
             id="nav-cta"
-            className="text-sm px-4 py-2 rounded-sm bg-blue-600 text-white font-medium hover:bg-blue-500 transition-colors duration-150"
+            className="text-sm px-4 py-2 rounded-sm bg-orange-600 text-white font-medium hover:bg-orange-500 transition-colors duration-150"
           >
             Request Assessment
           </a>
@@ -88,7 +88,7 @@ export default function Navbar() {
               <a
                 href="#cta"
                 onClick={() => setMenuOpen(false)}
-                className="inline-block text-sm px-4 py-2 rounded-sm bg-blue-600 text-white font-medium hover:bg-blue-500 transition-colors"
+                className="inline-block text-sm px-4 py-2 rounded-sm bg-orange-600 text-white font-medium hover:bg-orange-500 transition-colors"
               >
                 Request Assessment
               </a>

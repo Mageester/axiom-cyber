@@ -14,14 +14,14 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-zinc-950 via-transparent to-zinc-950 pointer-events-none" />
 
       {/* Radial accent glow */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-orange-600/5 rounded-full blur-3xl pointer-events-none" />
 
       {/* Content */}
       <div className="relative max-w-5xl mx-auto px-6 lg:px-8 text-center">
         {/* Division mark */}
         <div className="flex justify-center mb-8 animate-fade-up">
           <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-sm border border-zinc-800 bg-zinc-900/60 backdrop-blur-sm">
-            <div className="w-4 h-4 rounded-sm bg-blue-600 flex items-center justify-center">
+            <div className="w-4 h-4 rounded-sm bg-orange-600 flex items-center justify-center">
               <svg width="8" height="8" viewBox="0 0 14 14" fill="none">
                 <path d="M7 1L12 4V10L7 13L2 10V4L7 1Z" stroke="white" strokeWidth="2" strokeLinejoin="round" />
               </svg>
@@ -36,7 +36,7 @@ export default function Hero() {
         <h1 className="animate-fade-up delay-100 text-4xl md:text-5xl lg:text-7xl font-semibold text-zinc-100 leading-[1.05] tracking-tight mb-6">
           Security assessment for
           <br />
-          <span className="bg-gradient-to-br from-blue-400 via-blue-500 to-indigo-600 bg-clip-text text-transparent drop-shadow-sm">infrastructure that matters.</span>
+          <span className="bg-gradient-to-br from-orange-400 via-orange-500 to-indigo-600 bg-clip-text text-transparent drop-shadow-sm">infrastructure that matters.</span>
         </h1>
 
         {/* Subtext */}

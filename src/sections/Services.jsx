@@ -84,9 +84,9 @@ export default function Services() {
             <div
               key={service.id}
               id={service.id}
-              className="group relative overflow-hidden bg-zinc-900/40 backdrop-blur-sm border border-zinc-800/80 rounded-xl p-8 hover:bg-zinc-800/50 hover:border-zinc-700/80 hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-900/10 transition-all duration-500"
+              className="group relative overflow-hidden bg-zinc-900/40 backdrop-blur-sm border border-zinc-800/80 rounded-xl p-8 hover:bg-zinc-800/50 hover:border-zinc-700/80 hover:-translate-y-1 hover:shadow-2xl hover:shadow-orange-900/10 transition-all duration-500"
             >
-              <div className="text-blue-400 mb-5">
+              <div className="text-orange-400 mb-5">
                 {service.icon}
               </div>
               <h3 className="text-base font-semibold text-zinc-100 mb-3 group-hover:text-white transition-colors">

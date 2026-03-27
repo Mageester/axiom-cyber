@@ -22,16 +22,13 @@ export default function RiskExposure() {
             </h2>
             <div className="space-y-5 text-sm text-zinc-400 leading-relaxed">
               <p>
-                Your attack surface is the set of all possible points where an adversary might enter your environment.
-                It grows with every new service, third-party integration, and team that deploys infrastructure independently.
+                In today's landscape of automated scanning, zero-day exploitation, and complex supply chains, security is no longer just about compliance—it's about survival. Adversaries operate at scale, finding the weakest link before you even know it exists.
               </p>
               <p>
-                The problem is rarely that organizations aren't trying to be secure. It's that they lack a
-                structured, external view of what's actually exposed — and the time or expertise to develop one internally.
+                The problem isn't a lack of effort. It's that organizations lack a structured, external view of what's actually exposed. Your attack surface grows daily with every new service integration, cloud deployment, and third-party vendor.
               </p>
               <p>
-                A structured assessment provides that view. Not as a one-time exercise, but as a reference point
-                that your team can act against systematically.
+                A structured assessment provides that critical visibility. We act as an extension of your team, discovering misconfigurations, unpatched vulnerabilities, and architectural flaws before they become headline breaches.
               </p>
             </div>
           </div>
@@ -45,7 +42,7 @@ export default function RiskExposure() {
                     {stat.value}
                   </span>
                   {stat.unit && (
-                    <span className="text-base font-medium text-blue-400 leading-none mb-0.5">
+                    <span className="text-base font-medium text-orange-400 leading-none mb-0.5">
                       {stat.unit}
                     </span>
                   )}

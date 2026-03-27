@@ -25,7 +25,7 @@ export default function Trust() {
         {/* Trust banner */}
         <div className="flex flex-col md:flex-row items-start md:items-center gap-6 pb-14 mb-14 border-b border-zinc-800/60">
           <div className="flex items-center gap-3 flex-shrink-0">
-            <div className="w-8 h-8 rounded-sm bg-blue-600/10 border border-blue-600/30 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-sm bg-orange-600/10 border border-orange-600/30 flex items-center justify-center">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
               </svg>
