@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Logo from './Logo';
-import { NAV_LINKS } from '../lib/site';
+import { NAV_LINKS, SITE } from '../lib/site';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -18,7 +18,7 @@ export default function Navbar() {
       if (ticking) return;
       ticking = true;
       requestAnimationFrame(() => {
-        setScrolled(window.scrollY > 32);
+        setScrolled(window.scrollY > 24);
         ticking = false;
       });
     };
@@ -36,29 +36,31 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed w-full top-0 z-50 transition-[background-color,border-color,box-shadow] duration-300 ${
+      className={`fixed w-full top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-black/95 backdrop-blur-md border-b border-zinc-900 shadow-md'
-          : 'bg-black/30 backdrop-blur-sm border-b border-transparent'
+          ? 'bg-black/80 backdrop-blur-xl border-b border-zinc-800/80 shadow-[0_8px_32px_rgba(0,0,0,0.4)]'
+          : 'bg-transparent border-b border-transparent'
       }`}
     >
-      <nav
-        className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between"
-        aria-label="Primary"
-      >
-        <Link to="/" className="flex items-center rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500" id="nav-logo">
-          <Logo />
+      <nav className="max-w-7xl mx-auto px-6 lg:px-8 h-[72px] flex items-center justify-between gap-6" aria-label="Primary">
+        <Link
+          to="/"
+          className="shrink-0 rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500"
+        >
+          <Logo className="h-8 sm:h-9 w-auto max-w-[160px] sm:max-w-[200px]" />
         </Link>
 
-        <ul className="hidden md:flex items-center gap-8">
+        <ul className="hidden md:flex items-center gap-1">
           {NAV_LINKS.map((link) => {
             const isActive = location.pathname === link.href;
             return (
               <li key={link.href}>
                 <Link
                   to={link.href}
-                  className={`text-sm tracking-wide transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-500 rounded-sm ${
-                    isActive ? 'text-white font-medium' : 'text-zinc-400 hover:text-white'
+                  className={`px-4 py-2 rounded-md font-mono text-[11px] uppercase tracking-[0.14em] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-orange-500 ${
+                    isActive
+                      ? 'text-white bg-zinc-900/80 border border-zinc-700/50'
+                      : 'text-zinc-500 hover:text-zinc-200'
                   }`}
                   aria-current={isActive ? 'page' : undefined}
                 >
@@ -69,60 +71,45 @@ export default function Navbar() {
           })}
         </ul>
 
-        <div className="hidden md:flex items-center">
-          <Link
-            to="/contact"
-            id="nav-cta"
-            className="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-orange-600 text-white text-sm font-semibold hover:bg-orange-500 shadow-[0_0_15px_rgba(234,88,12,0.2)] hover:shadow-[0_0_25px_rgba(234,88,12,0.35)] transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
-          >
+        <div className="hidden md:flex items-center gap-4">
+          <span className="font-mono text-[9px] text-zinc-600 uppercase tracking-widest hidden lg:inline">
+            {SITE.parent}
+          </span>
+          <Link to="/contact" className="btn-primary text-[13px] py-2.5 px-5">
             Request Assessment
           </Link>
         </div>
 
         <button
           type="button"
-          id="nav-mobile-toggle"
-          className="md:hidden flex flex-col gap-1.5 p-2 text-zinc-400 cursor-pointer rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-orange-500"
+          className="md:hidden p-2 text-zinc-400 rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-orange-500"
           onClick={() => (isMenuOpen ? closeMenu() : openMenu())}
           aria-expanded={isMenuOpen}
           aria-controls="mobile-nav"
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
         >
-          <span className={`block w-5 h-px bg-current transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
-          <span className={`block w-5 h-px bg-current transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`} />
-          <span className={`block w-5 h-px bg-current transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-[7px]' : ''}`} />
+          <span className={`block w-5 h-px bg-current mb-1.5 transition-all ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+          <span className={`block w-5 h-px bg-current mb-1.5 transition-all ${isMenuOpen ? 'opacity-0' : ''}`} />
+          <span className={`block w-5 h-px bg-current transition-all ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
         </button>
       </nav>
 
       {isMenuOpen && (
-        <div
-          id="mobile-nav"
-          className="md:hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-xl border-b border-zinc-800 px-6 pb-6 pt-2 shadow-2xl"
-        >
-          <ul className="flex flex-col gap-1">
-            {NAV_LINKS.map((link) => {
-              const isActive = location.pathname === link.href;
-              return (
-                <li key={link.href}>
-                  <Link
-                    to={link.href}
-                    onClick={closeMenu}
-                    className={`block py-3 text-sm transition-colors ${
-                      isActive ? 'text-white font-medium' : 'text-zinc-400 hover:text-white'
-                    }`}
-                    aria-current={isActive ? 'page' : undefined}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              );
-            })}
-            <li className="pt-3 mt-2 border-t border-zinc-900">
-              <Link
-                to="/contact"
-                onClick={closeMenu}
-                className="inline-flex items-center justify-center w-full py-3 rounded-full bg-orange-600 text-white font-semibold hover:bg-orange-500 transition-colors"
-              >
+        <div id="mobile-nav" className="md:hidden border-t border-zinc-800/80 bg-black/95 backdrop-blur-xl px-6 py-6">
+          <ul className="space-y-1">
+            {NAV_LINKS.map((link) => (
+              <li key={link.href}>
+                <Link
+                  to={link.href}
+                  onClick={closeMenu}
+                  className="block py-3 font-mono text-xs uppercase tracking-widest text-zinc-400 hover:text-white"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+            <li className="pt-4">
+              <Link to="/contact" onClick={closeMenu} className="btn-primary w-full">
                 Request Assessment
               </Link>
             </li>

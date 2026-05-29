@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { PAGE_META, SITE } from '../lib/site';
+import { PAGE_META } from '../lib/site';
 
 export default function usePageMeta() {
   const { pathname } = useLocation();

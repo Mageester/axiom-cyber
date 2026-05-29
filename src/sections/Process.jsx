@@ -1,76 +1,69 @@
-import SectionLabel from '../components/SectionLabel';
+import SectionHeader from '../components/layout/SectionHeader';
+import Reveal from '../components/Reveal';
 
 const STEPS = [
   {
-    id: 'step-scoping',
     number: '01',
     title: 'Scoping',
-    description: 'We define the engagement boundary together — what systems are in scope, testing approach, escalation paths, and explicit exclusions. Nothing starts without this document.',
+    description: 'Engagement boundary, testing approach, escalation paths, and explicit exclusions — documented before any active work.',
     detail: '1–2 days',
   },
   {
-    id: 'step-recon',
     number: '02',
     title: 'Reconnaissance',
-    description: 'We map your externally-visible footprint, enumerate services, identify technology stack indicators, and develop a target model before any active testing begins.',
+    description: 'External footprint mapping, service enumeration, and target model development prior to controlled testing.',
     detail: '2–4 days',
   },
   {
-    id: 'step-assessment',
     number: '03',
     title: 'Assessment',
-    description: 'Structured, methodology-driven testing against the agreed scope. Findings are captured with reproduction steps, evidence, and severity rationale as testing progresses.',
+    description: 'Methodology-driven testing within scope. Findings captured with reproduction steps and severity rationale in real time.',
     detail: 'Scope-variable',
   },
   {
-    id: 'step-reporting',
     number: '04',
     title: 'Reporting',
-    description: 'A structured report delivered: executive summary, full technical findings, risk ratings with justification, and remediation guidance mapped to each finding.',
+    description: 'Executive summary, technical findings, risk ratings with justification, and remediation guidance per finding.',
     detail: '3–5 days',
   },
 ];
 
-export default function Process() {
+export default function Process({ showHeader = true }) {
   return (
-    <section id="process" className="py-24 lg:py-32 bg-zinc-900/20">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="mb-14">
-          <SectionLabel>Engagement Process</SectionLabel>
-          <h2 className="text-3xl md:text-4xl font-semibold text-zinc-100 tracking-tight max-w-xl leading-[1.2]">
-            Predictable, documented, and repeatable.
-          </h2>
-        </div>
+    <section id="process" className="py-24 lg:py-32 px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        {showHeader && (
+          <SectionHeader
+            label="methodology"
+            title="Four phases. Zero ambiguity."
+            description="Every engagement follows the same documented structure — from rules of engagement through deliverable handoff."
+          />
+        )}
 
-        {/* Desktop: horizontal steps */}
         <div className="relative">
-          {/* Connecting line */}
-          <div className="hidden lg:block absolute top-7 left-[5.5rem] right-[5.5rem] h-px bg-zinc-800" />
+          <div className="hidden lg:block absolute top-8 left-0 right-0 h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent" aria-hidden="true" />
 
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-10 lg:gap-6">
+          <ol className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-6 list-none p-0 m-0">
             {STEPS.map((step, i) => (
-              <div key={step.id} id={step.id} className="relative group">
-                {/* Step number with circle */}
-                <div className="flex items-center gap-4 mb-5">
-                  <div className="relative z-10 flex-shrink-0 w-14 h-14 rounded-full bg-black border border-zinc-800 group-hover:border-orange-500/50 group-hover:bg-orange-950/20 group-hover:shadow-[0_0_15px_rgba(234,88,12,0.12)] flex items-center justify-center transition-all duration-500">
-                    <span className="font-mono text-sm font-semibold text-orange-500 group-hover:text-orange-400 transition-colors">{step.number}</span>
+              <Reveal key={step.number}>
+                <li className="relative">
+                  <div className="flex items-center gap-3 mb-5">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-full border border-zinc-700 bg-black font-mono text-sm text-orange-500 shadow-[0_0_20px_rgba(249,115,22,0.08)]">
+                      {step.number}
+                    </span>
+                    {i < STEPS.length - 1 && (
+                      <span className="lg:hidden flex-1 h-px bg-zinc-800" aria-hidden="true" />
+                    )}
                   </div>
-                  {/* Mobile connecting line */}
-                  {i < STEPS.length - 1 && (
-                    <div className="lg:hidden flex-1 h-px bg-zinc-800" />
-                  )}
-                </div>
-
-                <div className="p-6 -m-6 rounded-xl border border-transparent group-hover:bg-zinc-900/30 group-hover:border-zinc-800/50 transition-all duration-500">
-                  <h3 className="text-base font-semibold text-zinc-100 mb-2 group-hover:text-white transition-colors">{step.title}</h3>
-                  <p className="text-sm text-zinc-500 leading-relaxed mb-4 group-hover:text-zinc-400 transition-colors">{step.description}</p>
-                  <span className="inline-block font-mono text-xs text-zinc-600 border border-zinc-800 bg-zinc-900/50 px-2.5 py-1 rounded-sm group-hover:text-zinc-400 group-hover:border-zinc-700 transition-all">
+                  <h3 className="text-base font-semibold text-white mb-2">{step.title}</h3>
+                  <p className="text-sm text-zinc-500 leading-relaxed mb-4">{step.description}</p>
+                  <span className="inline-block font-mono text-[10px] text-zinc-600 border border-zinc-800 px-2 py-1 rounded">
                     {step.detail}
                   </span>
-                </div>
-              </div>
+                </li>
+              </Reveal>
             ))}
-          </div>
+          </ol>
         </div>
       </div>
     </section>
