@@ -3,6 +3,15 @@
 export const ENGAGEMENT_FOOTNOTE =
   'All figures are indicative ranges in CAD. Final investment is confirmed in a written scope proposal after your intro call.';
 
+export const COMPARISON_FEATURES = [
+  { id: 'discovery', label: 'External asset discovery', values: [true, true, true] },
+  { id: 'exploit', label: 'Active exploitation', values: [false, true, true] },
+  { id: 'webapp', label: 'Web application depth (up to 3 apps)', values: [false, false, true] },
+  { id: 'api', label: 'API surface review', values: [false, false, true] },
+  { id: 'walkthrough', label: 'Findings walkthrough', values: [false, true, true] },
+  { id: 'roadmap', label: 'Remediation roadmap', values: [true, true, true] },
+];
+
 export const ENGAGEMENTS = [
   {
     id: 'exposure-map',
@@ -91,3 +100,7 @@ export const ADD_ONS = [
     investment: 'Scoped',
   },
 ];
+
+export function getEngagementById(id) {
+  return ENGAGEMENTS.find((p) => p.id === id) ?? ENGAGEMENTS.find((p) => p.featured);
+}

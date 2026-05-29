@@ -12,6 +12,33 @@ export const HERO_TERMINAL = [
   { type: 'prompt', text: 'request assessment → /contact' },
 ];
 
+export const SURFACE_TERMINAL = [
+  { type: 'cmd', text: 'axiom-cyber recon --external --passive-first' },
+  { type: 'dim', text: '────────────────────────────────────────────' },
+  { type: 'phase', text: 'discovered hosts .............. 142' },
+  { type: 'phase', text: 'live services ................. 389' },
+  { type: 'warn', text: 'exposed: admin panel /vpn (443)' },
+  { type: 'warn', text: 'exposed: staging.api.[redacted] (no WAF)' },
+  { type: 'info', text: 'cloud buckets ................. 3 public-read (review)' },
+  { type: 'success', text: 'prioritized surface map → report section 2' },
+];
+
+export const FINDING_TERMINAL = [
+  { type: 'cmd', text: 'axiom-cyber report --finding AXC-001 --redacted' },
+  { type: 'dim', text: '────────────────────────────────────────────' },
+  { type: 'warn', text: 'severity: CRITICAL · auth bypass' },
+  { type: 'info', text: 'asset: api.[redacted].com/v1/admin' },
+  { type: 'phase', text: 'repro: curl -X POST ... role=admin → token issued' },
+  { type: 'success', text: 'remediation: server-side role enforcement' },
+  { type: 'prompt', text: 'full report → deliverable sample below' },
+];
+
+export const TERMINAL_TABS = [
+  { id: 'engagement', label: 'engagement.log', lines: HERO_TERMINAL },
+  { id: 'surface', label: 'surface.map', lines: SURFACE_TERMINAL },
+  { id: 'finding', label: 'finding.sample', lines: FINDING_TERMINAL },
+];
+
 export const APPROACH_TERMINAL = [
   { type: 'cmd', text: 'cat /engagement/methodology.md' },
   { type: 'dim', text: '────────────────────────────────────────────' },

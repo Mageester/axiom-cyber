@@ -6,7 +6,7 @@ export default function Reveal({ children, className = '' }) {
   return (
     <div
       ref={ref}
-      className={`reveal ${visible ? 'reveal-visible' : ''} ${className}`.trim()}
+      className={`reveal ${visible ? 'reveal-visible stagger-visible' : ''} ${className}`.trim()}
     >
       {children}
     </div>

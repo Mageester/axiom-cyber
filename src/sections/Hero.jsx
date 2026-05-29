@@ -1,20 +1,25 @@
 import { Link } from 'react-router-dom';
 import Logo from '../components/Logo';
-import Terminal from '../components/terminal/Terminal';
-import { HERO_TERMINAL } from '../components/terminal/sequences';
+import TerminalTabs from '../components/terminal/TerminalTabs';
+import CursorGlow from '../components/effects/CursorGlow';
 import { SITE } from '../lib/site';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[calc(100vh-88px)] flex items-center pt-[88px] pb-20 lg:pb-28 px-6 lg:px-8 overflow-hidden">
+    <section className="hero-shell relative min-h-screen flex items-center pt-[88px] pb-20 lg:pb-28 px-6 lg:px-8 overflow-hidden">
+      <div className="absolute inset-0 hero-aurora pointer-events-none" aria-hidden="true" />
+      <div className="absolute inset-0 film-grain pointer-events-none" aria-hidden="true" />
+      <CursorGlow />
+      <div className="scan-line-ambient pointer-events-none" aria-hidden="true" />
+
       <div
-        className="absolute top-32 left-1/2 -translate-x-1/2 w-[min(700px,90vw)] opacity-[0.04] pointer-events-none select-none"
+        className="absolute top-24 left-1/2 -translate-x-1/2 w-[min(800px,95vw)] opacity-[0.03] pointer-events-none select-none"
         aria-hidden="true"
       >
-        <Logo variant="hero" className="!max-w-none !min-w-0 w-full h-auto mx-auto opacity-100" />
+        <Logo variant="hero" className="!max-w-none w-full" />
       </div>
 
-      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-16 items-center relative">
+      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-16 items-center relative z-10">
         <div>
           <div className="hero-enter mb-8">
             <Logo variant="hero" />
@@ -62,7 +67,7 @@ export default function Hero() {
 
         <div className="hero-enter hero-enter-d2 lg:hero-enter-d3 relative">
           <div className="absolute -inset-6 bg-gradient-to-br from-orange-600/10 via-transparent to-emerald-600/5 rounded-2xl blur-2xl pointer-events-none" aria-hidden="true" />
-          <Terminal lines={HERO_TERMINAL} title="axiom-cyber — engagement.log" className="relative ring-1 ring-white/5" />
+          <TerminalTabs className="relative ring-1 ring-white/5" />
         </div>
       </div>
     </section>

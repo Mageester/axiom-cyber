@@ -1,8 +1,18 @@
 import { useEffect, useState } from 'react';
 
-export default function useTypewriter(lines, { charDelay = 18, lineDelay = 280, enabled = true } = {}) {
+export default function useTypewriter(
+  lines,
+  { charDelay = 18, lineDelay = 280, enabled = true, resetKey = 0 } = {},
+) {
   const [lineIndex, setLineIndex] = useState(enabled ? 0 : lines.length);
   const [charIndex, setCharIndex] = useState(0);
+  const [prevResetKey, setPrevResetKey] = useState(resetKey);
+
+  if (prevResetKey !== resetKey) {
+    setPrevResetKey(resetKey);
+    setLineIndex(enabled ? 0 : lines.length);
+    setCharIndex(0);
+  }
 
   useEffect(() => {
     if (!enabled || lineIndex >= lines.length) return undefined;

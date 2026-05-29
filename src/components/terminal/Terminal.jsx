@@ -1,8 +1,5 @@
 import useTypewriter from '../../hooks/useTypewriter';
-
-function prefersReducedMotion() {
-  return typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-}
+import { prefersReducedMotion } from '../../hooks/useMotion';
 
 const LINE_CLASS = {
   cmd: 'text-zinc-100',
