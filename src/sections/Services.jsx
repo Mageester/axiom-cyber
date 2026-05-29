@@ -1,4 +1,5 @@
 import SectionLabel from '../components/SectionLabel';
+import Reveal from '../components/Reveal';
 
 const SERVICES = [
   {
@@ -72,19 +73,21 @@ export default function Services() {
   return (
     <section id="services" className="py-24 lg:py-32 bg-black">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="mb-14">
-          <SectionLabel>Core Services</SectionLabel>
-          <h2 className="text-3xl md:text-4xl font-semibold text-zinc-100 tracking-tight max-w-xl leading-[1.2]">
-            Structured assessments across your full security perimeter.
-          </h2>
-        </div>
+        <Reveal>
+          <div className="mb-14">
+            <SectionLabel>Core Services</SectionLabel>
+            <h2 className="text-3xl md:text-4xl font-semibold text-zinc-100 tracking-tight max-w-xl leading-[1.2] text-balance">
+              Structured assessments across your full security perimeter.
+            </h2>
+          </div>
+        </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {SERVICES.map((service) => (
-            <div
-              key={service.id}
+            <Reveal key={service.id}>
+            <article
               id={service.id}
-              className="group relative overflow-hidden bg-zinc-900/40 backdrop-blur-sm border border-zinc-800/80 rounded-xl p-8 hover:bg-zinc-800/50 hover:border-zinc-700/80 hover:-translate-y-1 hover:shadow-2xl hover:shadow-orange-900/10 transition-all duration-500"
+              className="group relative h-full overflow-hidden bg-zinc-900/40 backdrop-blur-sm border border-zinc-800/80 rounded-xl p-8 hover:bg-zinc-800/50 hover:border-zinc-700/80 md:hover:-translate-y-1 hover:shadow-2xl hover:shadow-orange-900/10 transition-all duration-500"
             >
               <div className="text-orange-400 mb-5">
                 {service.icon}
@@ -95,7 +98,8 @@ export default function Services() {
               <p className="text-sm text-zinc-500 leading-relaxed group-hover:text-zinc-400 transition-colors">
                 {service.description}
               </p>
-            </div>
+            </article>
+            </Reveal>
           ))}
         </div>
       </div>

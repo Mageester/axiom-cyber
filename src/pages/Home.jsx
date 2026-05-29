@@ -1,14 +1,19 @@
 import Hero from '../sections/Hero';
-import RiskExposure from '../sections/RiskExposure';
 import Services from '../sections/Services';
+import RiskExposure from '../sections/RiskExposure';
+import ProcessPreview from '../sections/ProcessPreview';
+import WhyAxiom from '../sections/WhyAxiom';
+import CTA from '../sections/CTA';
 
 export default function Home() {
-  // Adding padding to offset fixed navbar if hero doesn't do it itself
   return (
     <>
       <Hero />
       <Services />
       <RiskExposure />
+      <ProcessPreview />
+      <WhyAxiom compact />
+      <CTA />
     </>
   );
 }

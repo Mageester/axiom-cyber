@@ -1,4 +1,5 @@
 import SectionLabel from '../components/SectionLabel';
+import Reveal from '../components/Reveal';
 
 const STATS = [
   { id: 'stat-dwell', value: '204', unit: 'days', label: 'Median dwell time before detection (IBM 2023)' },
@@ -13,30 +14,32 @@ export default function RiskExposure() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Left: Copy */}
+          <Reveal>
           <div>
             <SectionLabel>Exposure Framing</SectionLabel>
-            <h2 className="text-3xl md:text-4xl font-semibold text-zinc-100 tracking-tight leading-[1.2] mb-6">
+            <h2 className="text-3xl md:text-4xl font-semibold text-zinc-100 tracking-tight leading-[1.2] mb-6 text-balance">
               Most organizations
               <br />
               don't know what's visible.
             </h2>
             <div className="space-y-5 text-sm text-zinc-400 leading-relaxed">
               <p>
-                In today's landscape of automated scanning, zero-day exploitation, and complex supply chains, security is no longer just about compliance—it's about survival. Adversaries operate at scale, finding the weakest link before you even know it exists.
+                Automated scanning, zero-day exploitation, and complex supply chains mean adversaries find weak links at scale — often before internal teams do.
               </p>
               <p>
-                The problem isn't a lack of effort. It's that organizations lack a structured, external view of what's actually exposed. Your attack surface grows daily with every new service integration, cloud deployment, and third-party vendor.
+                The gap is rarely effort. It is the lack of a structured, external view of what is actually exposed as services, cloud workloads, and vendors accumulate.
               </p>
               <p>
-                A structured assessment provides that critical visibility. We act as an extension of your team, discovering misconfigurations, unpatched vulnerabilities, and architectural flaws before they become headline breaches.
+                A structured assessment closes that gap: misconfigurations, unpatched vulnerabilities, and architectural flaws surfaced before they become incidents.
               </p>
             </div>
           </div>
+          </Reveal>
 
-          {/* Right: Stats */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-zinc-800">
             {STATS.map((stat) => (
-              <div key={stat.id} id={stat.id} className="bg-black p-8">
+              <Reveal key={stat.id}>
+              <div id={stat.id} className="bg-black p-8 h-full">
                 <div className="flex items-end gap-1 mb-3">
                   <span className="text-3xl font-semibold text-zinc-100 tabular-nums leading-none">
                     {stat.value}
@@ -51,6 +54,7 @@ export default function RiskExposure() {
                   {stat.label}
                 </p>
               </div>
+              </Reveal>
             ))}
           </div>
         </div>
