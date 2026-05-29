@@ -9,7 +9,7 @@ export default function ServicesPage() {
         label="services"
         title="Coverage across your full security perimeter."
         description="From external reconnaissance through controlled exploitation and structured reporting — each module scoped to your architecture."
-        cta={{ href: '/contact', label: 'Request Assessment' }}
+        cta={{ href: '/engagements', label: 'View engagement plans' }}
       />
       <Services showHeader={false} />
       <CTA showIntro={false} />

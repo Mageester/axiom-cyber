@@ -10,6 +10,7 @@ export const SITE = {
 export const NAV_LINKS = [
   { label: 'Home', href: '/' },
   { label: 'Services', href: '/services' },
+  { label: 'Engagements', href: '/engagements' },
   { label: 'Approach', href: '/approach' },
   { label: 'Contact', href: '/contact' },
 ];
@@ -24,6 +25,11 @@ export const PAGE_META = {
     title: 'Services — Axiom Cyber',
     description:
       'Attack surface mapping, penetration testing, web application review, infrastructure hardening, and incident readiness.',
+  },
+  '/engagements': {
+    title: 'Engagements & Options — Axiom Cyber',
+    description:
+      'Clear engagement packages: Exposure Map, External Penetration Test, Application & Perimeter — plus retest and architecture add-ons.',
   },
   '/approach': {
     title: 'Approach — Axiom Cyber',

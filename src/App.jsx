@@ -5,6 +5,7 @@ import usePageMeta from './hooks/usePageMeta';
 
 const Home = lazy(() => import('./pages/Home'));
 const ServicesPage = lazy(() => import('./pages/ServicesPage'));
+const EngagementsPage = lazy(() => import('./pages/EngagementsPage'));
 const Approach = lazy(() => import('./pages/Approach'));
 const Contact = lazy(() => import('./pages/Contact'));
 
@@ -41,6 +42,7 @@ export default function App() {
             <Route path="/" element={<RootLayout />}>
               <Route index element={<Home />} />
               <Route path="services" element={<ServicesPage />} />
+              <Route path="engagements" element={<EngagementsPage />} />
               <Route path="approach" element={<Approach />} />
               <Route path="contact" element={<Contact />} />
             </Route>

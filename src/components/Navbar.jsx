@@ -18,7 +18,7 @@ export default function Navbar() {
       if (ticking) return;
       ticking = true;
       requestAnimationFrame(() => {
-        setScrolled(window.scrollY > 24);
+        setScrolled(window.scrollY > 20);
         ticking = false;
       });
     };
@@ -38,29 +38,32 @@ export default function Navbar() {
     <header
       className={`fixed w-full top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-black/80 backdrop-blur-xl border-b border-zinc-800/80 shadow-[0_8px_32px_rgba(0,0,0,0.4)]'
-          : 'bg-transparent border-b border-transparent'
+          ? 'bg-black/90 backdrop-blur-xl border-b border-zinc-800/80 shadow-[0_12px_40px_rgba(0,0,0,0.5)]'
+          : 'bg-black/40 backdrop-blur-md border-b border-zinc-800/30'
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-6 lg:px-8 h-[72px] flex items-center justify-between gap-6" aria-label="Primary">
+      <nav
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-[88px] py-2 flex items-center justify-between gap-4"
+        aria-label="Primary"
+      >
         <Link
           to="/"
-          className="shrink-0 rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500"
+          className="shrink-0 rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500 -my-1"
         >
-          <Logo className="h-8 sm:h-9 w-auto max-w-[160px] sm:max-w-[200px]" />
+          <Logo variant="nav" />
         </Link>
 
-        <ul className="hidden md:flex items-center gap-1">
+        <ul className="hidden lg:flex items-center gap-0.5">
           {NAV_LINKS.map((link) => {
             const isActive = location.pathname === link.href;
             return (
               <li key={link.href}>
                 <Link
                   to={link.href}
-                  className={`px-4 py-2 rounded-md font-mono text-[11px] uppercase tracking-[0.14em] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-orange-500 ${
+                  className={`px-3.5 py-2 rounded-md font-mono text-[10px] uppercase tracking-[0.12em] transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-orange-500 ${
                     isActive
-                      ? 'text-white bg-zinc-900/80 border border-zinc-700/50'
-                      : 'text-zinc-500 hover:text-zinc-200'
+                      ? 'text-white bg-zinc-900/90 border border-zinc-700/60 shadow-inner'
+                      : 'text-zinc-500 hover:text-zinc-100 hover:bg-zinc-900/40'
                   }`}
                   aria-current={isActive ? 'page' : undefined}
                 >
@@ -71,18 +74,18 @@ export default function Navbar() {
           })}
         </ul>
 
-        <div className="hidden md:flex items-center gap-4">
-          <span className="font-mono text-[9px] text-zinc-600 uppercase tracking-widest hidden lg:inline">
-            {SITE.parent}
-          </span>
-          <Link to="/contact" className="btn-primary text-[13px] py-2.5 px-5">
+        <div className="hidden lg:flex items-center gap-5 shrink-0">
+          <Link to="/engagements" className="btn-ghost text-[10px] py-2 px-0 hidden xl:inline-flex">
+            Plans
+          </Link>
+          <Link to="/contact" className="btn-primary text-[12px] py-3 px-6">
             Request Assessment
           </Link>
         </div>
 
         <button
           type="button"
-          className="md:hidden p-2 text-zinc-400 rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-orange-500"
+          className="lg:hidden p-2.5 text-zinc-400 rounded-md border border-zinc-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-orange-500"
           onClick={() => (isMenuOpen ? closeMenu() : openMenu())}
           aria-expanded={isMenuOpen}
           aria-controls="mobile-nav"
@@ -95,7 +98,8 @@ export default function Navbar() {
       </nav>
 
       {isMenuOpen && (
-        <div id="mobile-nav" className="md:hidden border-t border-zinc-800/80 bg-black/95 backdrop-blur-xl px-6 py-6">
+        <div id="mobile-nav" className="lg:hidden border-t border-zinc-800/80 bg-black/98 backdrop-blur-xl px-6 py-6">
+          <p className="font-mono text-[9px] text-zinc-600 uppercase tracking-widest mb-4">{SITE.parent}</p>
           <ul className="space-y-1">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
@@ -108,8 +112,11 @@ export default function Navbar() {
                 </Link>
               </li>
             ))}
-            <li className="pt-4">
-              <Link to="/contact" onClick={closeMenu} className="btn-primary w-full">
+            <li className="pt-4 grid gap-3">
+              <Link to="/engagements" onClick={closeMenu} className="btn-outline w-full text-center">
+                View plans
+              </Link>
+              <Link to="/contact" onClick={closeMenu} className="btn-primary w-full text-center">
                 Request Assessment
               </Link>
             </li>
